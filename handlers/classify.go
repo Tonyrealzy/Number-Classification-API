@@ -18,12 +18,7 @@ type APIResponse struct {
 }
 
 func ClassifyNumberHandler(w http.ResponseWriter, r *http.Request) {
-	if r.Method == "OPTIONS" {
-		middleware.HandleCORS(w)
-		w.WriteHeader(http.StatusOK)
-		return
-	}
-	middleware.HandleCORS(w)
+	middleware.HandleCORS()
 
 	numberStr := r.URL.Query().Get("number")
 	if numberStr == "" {
