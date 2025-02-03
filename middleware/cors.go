@@ -11,15 +11,18 @@ func HandleCORS() gin.HandlerFunc {
 		c.Writer.Header().Set("Access-Control-Allow-Origin", "*")
 		c.Writer.Header().Set("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE, OPTIONS")
 		c.Writer.Header().Set("Access-Control-Allow-Headers", "Content-Type, Content-Length, Accept-Encoding, X-CSRF-Token, Authorization")
+
+		// Handle OPTIONS requests
 		if c.Request.Method == "OPTIONS" {
-			c.AbortWithStatus(http.StatusNoContent)
+			c.AbortWithStatus(http.StatusNoContent) // Send a No Content status for OPTIONS requests
 			return
 		}
 		c.Next()
 	}
-	// func HandleCORS (w http.ResponseWriter) {
-	// 	w.Header().Set("Access-Control-Allow-Origin", "*")
-	// 	w.Header().Set("Access-Control-Allow-Methods", "GET, POST, OPTIONS")
-	// 	w.Header().Set("Access-Control-Allow-Headers", "Content-Type")
-	// }
 }
+
+// func HandleCORS (w http.ResponseWriter) {
+// 	w.Header().Set("Access-Control-Allow-Origin", "*")
+// 	w.Header().Set("Access-Control-Allow-Methods", "GET, POST, OPTIONS")
+// 	w.Header().Set("Access-Control-Allow-Headers", "Content-Type")
+// }
