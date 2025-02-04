@@ -80,7 +80,8 @@ http://localhost:8080/api/classify-number?number=<your-number>
 
 For example, to classify the number 371:
 
-```bash "http://localhost:8080/api/classify-number?number=371"
+```bash 
+http://localhost:8080/api/classify-number?number=371
 
 ```
 
