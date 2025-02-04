@@ -1,5 +1,7 @@
 # Number Classification API
 
+#### https://number-classification-api-twv8.onrender.com/api/classify-number?number=<your-number>
+
 This is a simple API built with Go (Golang) that classifies a given number and provides various properties, including:
 
 - Whether the number is prime
@@ -22,9 +24,6 @@ This is a simple API built with Go (Golang) that classifies a given number and p
 - [Installation](#installation)
 - [Running the API](#running-the-api)
 - [Example Requests and Responses](#example-requests-and-responses)
-- [Error Handling](#error-handling)
-- [Deployment](#deployment)
-- [License](#license)
 
 ## Prerequisites
 
@@ -41,26 +40,30 @@ This is a simple API built with Go (Golang) that classifies a given number and p
 
 2. Navigate into the project directory:
 
-```cd number-classifier-api
+```bash
+cd number-classifier-api
 
 ```
 
 3. Initialize Go modules (if you haven't already):
 
-```go mod init number-classifier-api
+```bash
+go mod init number-classifier-api
 
 ```
 
 4. Install dependencies:
 
-```go mod tidy
+```bash
+go mod tidy
 
 ```
 
 5. Running the API
    Run the server using the following command:
 
-```go run main.go
+```bash
+go run main.go
 
 ```
 
@@ -68,7 +71,8 @@ The server will start and listen on port 8080 by default.
 
 You can access the API by sending requests to:
 
-```http://localhost:8080/api/classify-number?number=<your-number>
+```bash
+http://localhost:8080/api/classify-number?number=<your-number>
 
 ```
 
@@ -76,13 +80,14 @@ You can access the API by sending requests to:
 
 For example, to classify the number 371:
 
-```curl "http://localhost:8080/api/classify-number?number=371"
+```bash "http://localhost:8080/api/classify-number?number=371"
 
 ```
 
 #### Example Request
 
-```GET /api/classify-number?number=371
+```bash
+GET /api/classify-number?number=371
 
 ```
 
